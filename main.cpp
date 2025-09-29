@@ -20,7 +20,9 @@ class Movie
 
     void printAll()
     {
-        cout << "Movie: " << getMovie();
+        cout << "Movie: " << getMovie() << "\n";
+        cout << "Year Released: " << getYear() << "\n";
+        cout << "Screenwriter: " << getWriter() << "\n";
     }
 
     private:
@@ -52,15 +54,17 @@ int main()
             base.setYear(tempy);
             base.setWriter(tempw);
             contain[i] = base;
-
         }
-
 
         fin.close();
     }
      else
         cout << "Input file not found.\n";
 
+    for(int i = 0; i < contain.size(); i++)
+    {
+        
+    }
 
     return 0;
 }
