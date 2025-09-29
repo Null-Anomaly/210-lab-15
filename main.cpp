@@ -36,10 +36,17 @@ int main()
 
     if (fin.good())
     {
-        while(fin >> tempw)
+        while(fin >> tempm)
         {
             fin.ignore();
-            getline(fin, tempm);
+            fin >> tempy;
+            getline(fin, tempw);
+            Movie base;
+            base.setMovie(tempm);
+            base.setYear(tempy);
+            base.setWriter(tempw);
+
+
 
         }
 
