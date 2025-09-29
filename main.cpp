@@ -4,6 +4,8 @@ IDE used: VSC*/
 #include <iostream>
 #include <iomanip>
 #include <fstream>
+#include <string>
+#include <array>
 using namespace std;
 
 class Movie
@@ -25,6 +27,7 @@ class Movie
 
 int main()
 {
+    array<Movie, 4> contain;
     string tempw;
     string tempm;
     int tempy;
@@ -34,6 +37,11 @@ int main()
     if (fin.good())
     {
         while(fin >> tempw)
+        {
+            fin.ignore();
+            getline(fin, tempm);
+
+        }
 
 
         fin.close();
