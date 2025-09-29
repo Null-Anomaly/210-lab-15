@@ -48,6 +48,7 @@ int main()
         {
             fin.ignore();
             fin >> tempy;
+            fin.ignore();
             getline(fin, tempw);
             Movie base;
             base.setMovie(tempm);
@@ -63,7 +64,8 @@ int main()
 
     for(int i = 0; i < contain.size(); i++)
     {
-        
+        contain[i].printAll();
+        cout << "\n";
     }
 
     return 0;
