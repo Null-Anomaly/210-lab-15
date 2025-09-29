@@ -18,6 +18,11 @@ class Movie
     void setMovie(string m) {movie = m;}
     void setYear(int y) {year = y;}
 
+    void printAll()
+    {
+        cout << "Movie: " << getMovie();
+    }
+
     private:
     string writer;
     string movie;
@@ -36,6 +41,7 @@ int main()
 
     if (fin.good())
     {
+        int i = 0;
         while(fin >> tempm)
         {
             fin.ignore();
@@ -45,14 +51,15 @@ int main()
             base.setMovie(tempm);
             base.setYear(tempy);
             base.setWriter(tempw);
-
-
+            contain[i] = base;
 
         }
 
 
         fin.close();
     }
+     else
+        cout << "Input file not found.\n";
 
 
     return 0;
