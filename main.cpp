@@ -1,6 +1,7 @@
 /*Comsc 210 | Lab 15 | Lawrence Bryant
 IDE used: VSC*/
 
+//Includes
 #include <iostream>
 #include <iomanip>
 #include <fstream>
@@ -8,6 +9,7 @@ IDE used: VSC*/
 #include <array>
 using namespace std;
 
+//Class declairation
 class Movie
 {
     public:
@@ -18,6 +20,7 @@ class Movie
     void setMovie(string m) {movie = m;}
     void setYear(int y) {year = y;}
 
+    //Handles output of variables
     void printAll()
     {
         cout << "Movie: " << getMovie() << "\n";
@@ -32,21 +35,25 @@ class Movie
 
 };
 
+//Main.
 int main()
 {
+    //Variable declaration.
     array<Movie, 4> contain;
     string tempw;
     string tempm;
     int tempy;
 
+    //Brings in the file being used
     ifstream fin("input.txt.txt");
 
+    //Checks if the file being used is good and fills out the array with data from
+    //A good file.
     if (fin.good())
     {
         int i = 0;
-        while(fin >> tempm)
+        while(getline(fin,tempm))
         {
-            fin.ignore();
             fin >> tempy;
             fin.ignore();
             getline(fin, tempw);
@@ -55,13 +62,14 @@ int main()
             base.setYear(tempy);
             base.setWriter(tempw);
             contain[i] = base;
+            i++;
         }
 
         fin.close();
     }
-     else
-        cout << "Input file not found.\n";
+     else {cout << "Input file not found.\n";}
 
+    //Outputs all items in the array via printAll function in class.
     for(int i = 0; i < contain.size(); i++)
     {
         contain[i].printAll();
